@@ -1,0 +1,28 @@
+{
+    "ProductList": [
+        {
+            "name": "apples",
+            "quantity": 5
+        },
+        {
+            "name": "eggs",
+            "quantity": 6
+        },
+        {
+            "name": "cheese",
+            "quantity": 1
+        },
+        {
+            "name": "milk",
+            "quantity": 1
+        },
+        {
+            "name": "bread",
+            "quantity": 1
+        },
+        {
+            "name": "butter",
+            "quantity": 0
+        }
+    ]
+}

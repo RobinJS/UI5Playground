@@ -1,0 +1,45 @@
+<mvc:View
+	controllerName="ui5.walkthrough.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+>
+	<App>
+		<IconTabBar
+            id="idIconTabBarStretchContent"
+            stretchContentHeight="false"
+            backgroundDesign="Transparent"
+            applyContentPadding="false"
+            expanded="{device>/isNoPhone}"
+            class="sapUiResponsiveContentPadding">
+            <items>
+                <IconTabFilter text="Home" key="home">
+                    <Text text="Summary..." />
+                    <Button text="random dish" />
+                </IconTabFilter>
+                <IconTabFilter text="Storage" key="storage">
+                    <ScrollContainer
+                        height="100%"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true">
+                        <List items="{/ProductList}">
+                            <StandardListItem title="{name}" counter="{quantity}" />
+                        </List>
+                    </ScrollContainer>
+                </IconTabFilter>
+                <IconTabFilter text="Recipes" key="recipes">
+                    <ScrollContainer
+                        height="100%"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true">
+                        <List items="{/RecipeList}">
+                            <StandardListItem title="{name}" counter="{ingredients}" />
+                        </List>
+                    </ScrollContainer>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+	</App>
+</mvc:View>
