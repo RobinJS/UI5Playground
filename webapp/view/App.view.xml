@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
+	controllerName="ui5.playground.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true"
@@ -15,29 +15,16 @@
             <items>
                 <IconTabFilter text="Home" key="home">
                     <Text text="Summary..." />
-                    <Button text="random dish" />
+                    <Button
+                        text="Get Random dish"
+                        class="sapUiLargeMarginTop sapUiSmallMarginBegin"
+                        press="onOpenRandomDishToast"/>
                 </IconTabFilter>
                 <IconTabFilter text="Storage" key="storage">
-                    <ScrollContainer
-                        height="100%"
-                        width="100%"
-                        horizontal="false"
-                        vertical="true">
-                        <List items="{/ProductList}">
-                            <StandardListItem title="{name}" counter="{quantity}" />
-                        </List>
-                    </ScrollContainer>
+                    <mvc:XMLView viewName="ui5.playground.view.Storage"/>
                 </IconTabFilter>
                 <IconTabFilter text="Recipes" key="recipes">
-                    <ScrollContainer
-                        height="100%"
-                        width="100%"
-                        horizontal="false"
-                        vertical="true">
-                        <List items="{/RecipeList}">
-                            <StandardListItem title="{name}" counter="{ingredients}" />
-                        </List>
-                    </ScrollContainer>
+                    <mvc:XMLView viewName="ui5.playground.view.Recipes"/>
                 </IconTabFilter>
             </items>
         </IconTabBar>

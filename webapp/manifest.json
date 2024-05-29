@@ -1,7 +1,7 @@
 {
 	"_version": "1.58.0",
 	"sap.app": {
-		"id": "ui5.walkthrough",
+		"id": "ui5.playground",
 		"i18n": {
 			"bundleUrl": "i18n/i18n.properties",
 			"supportedLocales": [
@@ -36,7 +36,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "ui5.walkthrough.i18n.i18n",
+					"bundleName": "ui5.playground.i18n.i18n",
 					"supportedLocales": [
 						""
 					],
@@ -45,7 +45,7 @@
 			}
 		},
 		"rootView": {
-			"viewName": "ui5.walkthrough.view.App",
+			"viewName": "ui5.playground.view.App",
 			"type": "XML",
 			"id": "app"
 		},
@@ -67,7 +67,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"type": "View",
 				"viewType": "XML",
-				"path": "sap.ui.demo.nav.view",
+				"path": "ui5.playground.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"transition": "slide",
@@ -77,49 +77,49 @@
 			},
 			"routes": [{
 				"pattern": "",
-				"name": "appHome",
+				"name": "app",
+				"target": "app"
+			}, {
+				"pattern": "home",
+				"name": "home",
 				"target": "home"
 			}, {
-				"pattern": "storage",
-				"name": "storageList",
-				"target": "storage"
-			}, {
 				"pattern": "recipes",
-				"name": "recipesList",
+				"name": "recipes",
 				"target": "recipes"
 			}, {
-				"pattern": "order",
-				"name": "order",
-				"target": "order"
+				"pattern": "storage",
+				"name": "storage",
+				"target": "storage"
 			}],
 			"targets": {
+                "app": {
+					"id": "app",
+					"name": "App"
+				},
 				"home": {
 					"id": "home",
-					"name": "Home",
-					"level" : 1
+					"name": "Home"
 				},
 				"notFound": {
 					"id": "notFound",
 					"name": "NotFound",
 					"transition": "show"
 				},
+                "recipes": {
+                    "id": "recipes",
+                    "path": "recipes",
+                    "name": "recipes"
+                },
 				"storage": {
 					"id": "storage",
-					"path": "sap.ui.demo.nav.view.storage",
-					"name": "storage",
-					"level" : 2
-				},
-                "recipes": {
-					"id": "recipes",
-					"path": "sap.ui.demo.nav.view.recipes",
-					"name": "recipes",
-					"level" : 3
+					"path": "storage",
+					"name": "storage"
 				},
                 "order": {
 					"id": "order",
-					"path": "sap.ui.demo.nav.view.order",
-					"name": "order",
-					"level" : 4
+					"path": "order",
+					"name": "order"
 				}
 
 			}

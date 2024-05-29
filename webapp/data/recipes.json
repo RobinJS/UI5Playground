@@ -1,0 +1,68 @@
+{
+    "RecipeList": [
+        {
+            "name": "Omelette",
+            "description": "A dish made from eggs",
+            "ingredients": [
+                {
+                    "name": "eggs",
+                    "quantity": 2
+                },
+                {
+                    "name": "butter",
+                    "quantity": 150
+                }
+            ]
+        },
+        {
+            "name": "Spaghetti Bolognese",
+            "description": "Spaghetti served with a sauce made from tomatoes",
+            "ingredients": [
+                {
+                    "name": "olive oil",
+                    "quantity": 1
+                },
+                {
+                    "name": "carrots",
+                    "quantity": 2
+                },
+                {
+                    "name": "beef mince",
+                    "quantity": 500
+                },
+                {
+                    "name": "spaghetti",
+                    "quantity": 400
+                }
+            ]
+        },
+        {
+            "name": "Pizza",
+            "description": "Flat base of leavened wheat-based dough topped with tomato, cheese, and other",
+            "ingredients": [
+                {
+                    "name": "mushrooms",
+                    "quantity": 2
+                },
+                {
+                    "name": "cheese",
+                    "quantity": 100
+                }
+            ]
+        },
+        {
+            "name": "Lasagna",
+            "description": "Italian dish made of stacked layers of lasagna alternating with fillings",
+            "ingredients": [
+                {
+                    "name": "Meat",
+                    "quantity": 500
+                },
+                {
+                    "name": "onion",
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}

@@ -3,10 +3,10 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel"
 ], function (Controller, JSONModel) {
 	"use strict";
-	return Controller.extend("ui5.playground.controller.Storage", {
+	return Controller.extend("ui5.playground.controller.Recipes", {
         onInit: function () {
-			var productsModel = new JSONModel("data/products.json");
-			this.getView().setModel(productsModel);
+			var recipesModel = new JSONModel("data/recipes.json");
+			this.getView().setModel(recipesModel);
 		}
 	});
 });
