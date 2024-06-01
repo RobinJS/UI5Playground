@@ -3,10 +3,18 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel"
 ], function (Controller, JSONModel) {
 	"use strict";
+    
 	return Controller.extend("ui5.playground.controller.Storage", {
         onInit: function () {
-			var productsModel = new JSONModel("data/products.json");
-			this.getView().setModel(productsModel);
-		}
+			this.productsModel = new JSONModel("data/products.json");
+			this.getView().setModel(this.productsModel);
+
+            this.getOwnerComponent().getModel("ProductsModel").setData(this.productsModel);
+		},
+
+        onAddItem: function(oEvent) {
+            
+        }
+
 	});
 });
