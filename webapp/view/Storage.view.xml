@@ -2,22 +2,20 @@
 	controllerName="ui5.playground.controller.Storage"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
+
+    <!-- <core:Fragment fragmentName="ui5.playground.fragments.AddItem" type="XML"/> -->
+    
     <Panel>
-        <!-- <Button text="Save changes"
-                press="onSaveChanges"
-                ariaDescribedBy="acceptButtonDescription genericButtonDescription"/>
-        
-        <Button text="+" press="onAddItem" /> -->
         <Toolbar>
             <Button text="Save changes"
                 type="Ghost"
-                press="onSaveChanges"
                 ariaDescribedBy="acceptButtonDescription genericButtonDescription"/>
             <ToolbarSpacer/>
             <Button text="Add item"
                 type="Ghost"
                 press="onAddItem" />
         </Toolbar>
+        
         <ScrollContainer
             height="100%"
             width="100%"
@@ -31,7 +29,6 @@
                         max="100"
                         step="1"
                         width="120px"
-                        change="onStepInputChange"
                     />
                 </InputListItem>
             </List>

@@ -1,7 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
-], function (Controller, JSONModel) {
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/Fragment",
+    "sap/ui/core/syncStyleClass"
+], function (Controller, JSONModel, Fragment, syncStyleClass) {
 	"use strict";
     
 	return Controller.extend("ui5.playground.controller.Storage", {
@@ -13,7 +15,41 @@ sap.ui.define([
 		},
 
         onAddItem: function(oEvent) {
-            
+            if (!this.pDialog) {
+                this.pDialog = this.loadFragment({
+                    name: "ui5.playground.fragments.AddItem"
+                }).then(function (oDialog) {
+                    syncStyleClass(this.getOwnerComponent().getContentDensityClass(), this.getView(), oDialog);
+                    return oDialog;
+                }.bind(this));
+            }
+
+            this.pDialog.then(function (oDialog) {
+                oDialog.open();
+            });
+        },
+
+        onCloseItemDialog: function () {
+            var inputName = this.getView().byId("itemNameInput").getValue();
+            var inputQuantity = this.getView().byId("itemQuantityInput").getValue();
+
+            var existingItem = this.getItemFromModel(inputName);
+
+            if (existingItem != null) {
+                existingItem.quantity = inputQuantity;
+            }
+            else {
+                this.productsModel.getData().ProductList.push({
+                    "name": inputName,
+                    "quantity": inputQuantity
+                });
+            }
+
+            this.byId("addItemDialog").close();
+        },
+
+        getItemFromModel: function (itemName) {
+            return this.productsModel.getData().ProductList.filter(item => item.name === itemName)[0];
         }
 
 	});

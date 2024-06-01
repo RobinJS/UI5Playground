@@ -20,6 +20,17 @@ sap.ui.define([
 			};
 			const oModel = new JSONModel(oData);
 			this.setModel(oModel);
+		},
+        
+		getContentDensityClass : function() {
+			if (!this._sContentDensityClass) {
+				if (!sap.ui.Device.support.touch) {
+					this._sContentDensityClass = "sapUiSizeCompact";
+				} else {
+					this._sContentDensityClass = "sapUiSizeCozy";
+				}
+			}
+			return this._sContentDensityClass;
 		}
 	});
 });
