@@ -12,14 +12,6 @@ sap.ui.define([
 
 		init() {
 			UIComponent.prototype.init.apply(this, arguments);
-
-			const oData = {
-				recipient: {
-					name: "Visitor"
-				}
-			};
-			const oModel = new JSONModel(oData);
-			this.setModel(oModel);
 		},
         
 		getContentDensityClass : function() {

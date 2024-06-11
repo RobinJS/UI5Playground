@@ -39,10 +39,13 @@ sap.ui.define([
                 existingItem.quantity = inputQuantity;
             }
             else {
-                this.productsModel.getData().ProductList.push({
+                var list = this.productsModel.getProperty("/ProductList");
+                list.push({
                     "name": inputName,
                     "quantity": inputQuantity
                 });
+
+                this.productsModel.setProperty("/ProductList", list);
             }
 
             this.byId("addItemDialog").close();

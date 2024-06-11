@@ -9,7 +9,8 @@
         <Toolbar>
             <Button text="Save changes"
                 type="Ghost"
-                ariaDescribedBy="acceptButtonDescription genericButtonDescription"/>
+                ariaDescribedBy="acceptButtonDescription genericButtonDescription"
+                enabled="false"/>
             <ToolbarSpacer/>
             <Button text="Add item"
                 type="Ghost"
