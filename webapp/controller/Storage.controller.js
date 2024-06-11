@@ -30,12 +30,12 @@ sap.ui.define([
         },
 
         onOkItemDialog: function () {
-            var inputName = this.getView().byId("itemNameInput").getValue();
+            let inputName = this.getView().byId("itemNameInput").getValue();
 
             if (!this.validName(inputName)) return;
 
-            var inputQuantity = this.getView().byId("itemQuantityInput").getValue();
-            var existingItem = this.getItemFromModel(inputName);
+            let inputQuantity = this.getView().byId("itemQuantityInput").getValue();
+            let existingItem = this.getItemFromModel(inputName);
 
             if (existingItem != null) existingItem.quantity = inputQuantity;
             else this.addToProductList(inputName, inputQuantity);
@@ -59,7 +59,7 @@ sap.ui.define([
         },
 
         addToProductList: function(inputName, inputQuantity) {
-            var list = this.productsModel.getProperty("/ProductList");
+            let list = this.productsModel.getProperty("/ProductList");
             list.push({
                 "name": inputName,
                 "quantity": inputQuantity
@@ -73,12 +73,20 @@ sap.ui.define([
         },
 
         onLiveChange: function (oEvent) {
-			var value = oEvent.getParameter("value");
-			var oInput = oEvent.getSource();
+			let value = oEvent.getParameter("value");
+			let oInput = oEvent.getSource();
             value = value.substr(0, 3);
             value = value.replace(/[^\d]/g, '');
             oInput.setValue(value);
-		}
+		},
+
+        onDeleteItem: function(oEvent) {
+            let list = this.productsModel.getProperty("/ProductList");
+            let itemName = oEvent.getSource().oParent.getLabel();
+            let idx = list.findIndex(i=>i.name == itemName);
+            list.splice(idx, 1);
+            this.productsModel.setProperty("/ProductList", list);
+        }
 
 	});
 });

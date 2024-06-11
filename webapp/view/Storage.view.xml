@@ -31,6 +31,9 @@
                         step="1"
                         width="120px"
                     />
+                    <Button 
+                        icon="/images/icons8-bin-32.png"
+                        press="onDeleteItem"/>
                 </InputListItem>
             </List>
         </ScrollContainer>
