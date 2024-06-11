@@ -10,7 +10,8 @@
 		<Label text="Item name:" labelFor="itemNameInput" />
 		<Input
 			id="itemNameInput"
-			placeholder="Enter item name">
+			placeholder="Enter item name"
+            type="Text">
 			<suggestionItems>
 				<core:Item text="{Name}" />
 			</suggestionItems>
@@ -19,7 +20,9 @@
         <Label text="Quantity:" labelFor="itemQuantityInput" />
 		<Input
 			id="itemQuantityInput"
-			placeholder="Enter quantity">
+			placeholder="Enter quantity"
+            type="Number"
+            liveChange=".onLiveChange">
 			<suggestionItems>
 				<core:Item text="{Name}" />
 			</suggestionItems>
@@ -29,7 +32,12 @@
     <beginButton>
         <Button
             text="Ok"
-            press=".onCloseItemDialog"/>
+            press=".onOkItemDialog"/>
     </beginButton>
+    <endButton>
+        <Button
+            text="Cancel"
+            press=".onCancelItemDialog"/>
+    </endButton>
   </Dialog>
 </core:FragmentDefinition>
